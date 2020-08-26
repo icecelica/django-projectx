@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "projectx_app/base.html" %}
+{% load static %}
+{% block body_block %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register As User Now</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+
+  <body class="background">
+    <div class="ice">
+      {% if registered %}
+      <h1>Thank You for registering</h1>
+      {% else %}
+      <h2>Register Here!</h2>
+      <h3>Fill out the form:</h3>
+      <form method="post" enctype="multipart/form-data" > <!-- multipart/form-data ni utk enable upload image-->
+  {{ form.as_p}}
+  {% csrf_token %}
+  {{ user_form.as_p }} <!-- yang ni nanti kite set dekat views.py-->
+  {{ profile_form.as_p }} <!-- yang ni nanti kite set dekat views.py-->
+  <input type="submit" class="btn btn-primary" value="SUBMIT YOUR APPLICATION">
+</form>
+{% endif %}
+</div>
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "projectx_app/base.html" %}
+{% load static %}
+{% block body_block %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+  <body class="background">
+
+<div class="container">
+  <div class="ice">
+
+    <h1 style="text-align:center">Hello There. Welcome to Project-X by IC3</h1>
+    <p style="text-align:center">{{ insert_me }}</p>
+    </div>
+</div> <!--CONTAINER -->
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-link" href="{% url 'index' %}">HOME</a></li>
+          <li><a class="navbar-link" href="{% url 'projectx_app:about' %}">ABOUT US</a></li>
+          <li><a class="navbar-link" href="{% url 'projectx_app:bloglist' %}">BLOG LIST</a></li>
+          <li><a class="navbar-link" href="{% url 'projectx_app:register' %}">REGISTER</a></li>
+          <li><a class="navbar-link" href="{% url 'projectx_app:empty' %}">EMPTY PAGE</a></li>
+          <li><a class="navbar-link" href="{% url 'admin:index' %}">ADMINISTRATOR</a></li>
+          {% if user.is_authenticated %}
+               <li><a class="navbar-link" href="{% url 'logout' %}">LOGOUT</a></li>
+               {% else %}
+               <li><a class="navbar-link" href="{% url 'projectx_app:user_login' %}">LOGIN</a></li>
+               {% endif %}
+        </ul>
+      </div>
+    </nav> <!--Bootstrap Navbar. -->
+
+    <div class="container">
+      {% block body_block %}
+      <!-- anything outside of this will be inherited if you extend-->
+      {% endblock %}
+
+  </body>
+</html>

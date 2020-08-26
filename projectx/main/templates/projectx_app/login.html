@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "projectx_app/base.html" %}
+{% load static %}
+{% block body_block %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Here</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+
+  <body class="background">
+    <div class="ice">
+      <h1 style="text-align:center">Please Login Here</h1>
+       <form action="{% url 'projectx_app:user_login' %}" method="post">
+         {% csrf_token %}
+         <label for="username">username:</label>
+         <input type="text" name="username" placeholder="Enter Username Here">
+
+         <label for="password">password:</label>
+         <input type="password" name="password">
+
+         <input type="submit" name="" value="Login">
+       </form>
+</div>
+  </body>
+</html>
+{% endblock %}

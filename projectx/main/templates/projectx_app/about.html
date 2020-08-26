@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "projectx_app/base.html" %}
+{% block body_block %}
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About & Contact</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+  
+  <body class="background">
+    <div class="ice">
+      <h1 style="text-align:center">If you have any enquiries, please fill in the form below</h1>
+      <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="submit">
+      </form>
+    </div>
+
+  </body>
+</html>
+{% endblock %}
